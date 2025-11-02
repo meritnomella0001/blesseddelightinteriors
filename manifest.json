@@ -13,12 +13,12 @@
   "icons": [
     {
       "src": "/bdi.png",
-      "sizes": "512x512",
+      "sizes": "960x960",
       "type": "image/png"
     },
     {
       "src": "/bdi.png",
-      "sizes": "512x512",
+      "sizes": "960x960",
       "type": "image/png"
     }
   ]
