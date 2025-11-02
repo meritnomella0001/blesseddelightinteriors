@@ -1,4 +1,4 @@
-onst CACHE_NAME = 'blesseddelightinteriors-cache-v1';
+const CACHE_NAME = 'blesseddelightinteriors-cache-v1';
 const urlsToCache = [
   '/',                  // Main page
   '/bdi.png',
