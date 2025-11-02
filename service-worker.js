@@ -1,8 +1,8 @@
-onst CACHE_NAME = 'blesseddelight-cache-v1';
+onst CACHE_NAME = 'blesseddelightinteriors-cache-v1';
 const urlsToCache = [
   '/',                  // Main page
-  '/images-ezgif.com-resize (1).png',
-  '/images-ezgif.com-resize (1).png'
+  '/bdi.png',
+  '/bdi.png'
 ];
 
 // Install – cache essential files
