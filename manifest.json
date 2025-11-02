@@ -1,0 +1,25 @@
+{ 
+  "id": "com.blesseddelightinteriors.app",
+  "name": "blesseddelightinteriors",
+  "short_name": "BDI Furnitures",
+  "description": "Interior furnitures marketplace .",
+  "start_url": "https://blesseddelightinteriors.onrender.com",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#004085",
+  "background_color": "#ffffff",
+  "theme_color": "#004085",
+  "icons": [
+    {
+      "src": "/bdi.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/bdi.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
