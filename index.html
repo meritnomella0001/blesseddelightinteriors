@@ -393,8 +393,272 @@ if ('serviceWorker' in navigator) {
   });
 }
   </script>
+  <!-- PWA Install Prompt Modal (Furniture Theme) -->
+<div id="installModal" class="install-modal">
+  <div class="modal-content">
+    <button class="close-btn" aria-label="Close">&times;</button>
+    
+    <div class="modal-header">
+      <img src="/bdi.png" alt="Blessed Delight Interiors" class="modal-logo">
+      <h3>Install Blessed Delight Interiors</h3>
+    </div>
+
+    <div class="modal-body">
+      <p><strong>Get the full furniture shopping experience!</strong></p>
+      <p>Install our app for faster access, offline browsing, and exclusive interior design inspiration — right from your home screen.</p>
+      
+      <div class="feature-grid">
+        <div class="feature">
+          <span role="img" aria-label="sofa">Sofa</span> Browse furniture offline
+        </div>
+        <div class="feature">
+          <span role="img" aria-label="speed">Speed</span> Instant loading
+        </div>
+        <div class="feature">
+          <span role="img" aria-label="home">Home</span> Home screen shortcut
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button id="installBtn" class="install-button">Install App</button>
+      <button class="later-btn">Maybe Later</button>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Furniture-Themed Install Modal */
+.install-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(74, 54, 38, 0.85);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+  font-family: 'Georgia', serif;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.install-modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: #fdf6e3;
+  border-radius: 16px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  overflow: hidden;
+  margin-top: 80px;
+  border: 3px solid #8B6F47;
+  position: relative;
+  animation: slideDown 0.5s ease-out;
+}
+
+.modal-header {
+  text-align: center;
+  padding: 1.5rem 1rem 0.5rem;
+  background: linear-gradient(to bottom, #f4e8d1, #fdf6e3);
+}
+
+.modal-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  border: 2px solid #8B6F47;
+  margin-bottom: 0.5rem;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #5D4037;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.modal-body {
+  padding: 1rem 1.5rem;
+  color: #5D4037;
+  line-height: 1.6;
+}
+
+.modal-body p {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: #6D4C41;
+  background: #faecd3;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  border-left: 4px solid #D4A017;
+}
+
+.feature span[role="img"] {
+  font-size: 1.3rem;
+}
+
+.modal-footer {
+  padding: 1rem 1.5rem 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-direction: column;
+}
+
+.install-button {
+  background: #8B6F47;
+  color: white;
+  border: none;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(139, 111, 71, 0.3);
+}
+
+.install-button:hover {
+  background: #6d5638;
+  transform: translateY(-2px);
+}
+
+.later-btn {
+  background: transparent;
+  color: #8D6E63;
+  border: 2px solid #D7CCC8;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.later-btn:hover {
+  background: #efebe9;
+  border-color: #8D6E63;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #8B6F47;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  background: #6d5638;
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .modal-content {
+    margin-top: 60px;
+    border-radius: 12px;
+  }
+  .modal-header h3 {
+    font-size: 1.2rem;
+  }
+}
+</style>
+
+<script>
+// PWA Install Prompt Logic
+let deferredPrompt;
+const installModal = document.getElementById('installModal');
+const installBtn = document.getElementById('installBtn');
+const closeBtn = document.querySelector('.close-btn');
+const laterBtn = document.querySelector('.later-btn');
+
+// Check if already installed or dismissed
+if (!localStorage.getItem('pwa_install_dismissed') && !window.matchMedia('(display-mode: standalone)').matches) {
+  // Listen for the install prompt
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    setTimeout(() => installModal.classList.add('show'), 3000); // Show after 3s
+  });
+}
+
+// Install button
+installBtn?.addEventListener('click', async () => {
+  if (!deferredPrompt) return;
+  installModal.classList.remove('show');
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  if (outcome === 'accepted') {
+    localStorage.setItem('pwa_installed', 'true');
+  }
+  deferredPrompt = null;
+});
+
+// Close or Later
+[closeBtn, laterBtn].forEach(btn => {
+  btn?.addEventListener('click', () => {
+    installModal.classList.remove('show');
+    localStorage.setItem('pwa_install_dismissed', 'true');
+  });
+});
+
+// Hide if already installed
+window.addEventListener('appinstalled', () => {
+  installModal.classList.remove('show');
+  localStorage.setItem('pwa_installed', 'true');
+});
+        </script>
 </body>
 
 </html>
+
 
 
