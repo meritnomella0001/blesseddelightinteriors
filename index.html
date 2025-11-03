@@ -161,6 +161,36 @@
     </div>
   </div>
 </div>
+  <!-- Opera Mini Warning + Chrome Link -->
+<div id="browser-warning" style="
+  display:none;
+  background:#004085;
+  color:#fff;
+  padding:12px;
+  text-align:center;
+  font-size:15px;
+  font-family:sans-serif;
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+">
+  ⚠️ Opera Mini detected. For the best experience, 
+  <a id="chrome-link" 
+     href="googlechrome://navigate?url=https://blesseddelightinteriors.onrender.com"
+     style="color:#ffeb3b; text-decoration:underline;">
+     open this app in Chrome
+  </a>
+  to install it.
+</div>
+
+<script>
+  // Detect Opera Mini or old browsers
+  if (navigator.userAgent.includes('Opera Mini')) {
+    document.getElementById('browser-warning').style.display = 'block';
+  }
+</script>
 
 <script>
 const SUPABASE_URL = 'https://pjedtymwfyjmzluejygs.supabase.co';
@@ -664,6 +694,7 @@ window.addEventListener('appinstalled', () => {
 </body>
 
 </html>
+
 
 
 
