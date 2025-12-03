@@ -219,11 +219,14 @@
       <div style="font-size:.78rem; color:var(--muted)">Elegant furniture marketplace</div>
     </div>
   </div>
+
   <div class="top-controls">
-    <select id="stateSelect" class="form-select form-select-sm" style="min-width:120px">
-      <option value="">All states</option>
-    </select>
-    <button id="menuBtn" class="btn btn-sm btn-outline-secondary"><i class="bi bi-list"></i></button>
+  <select id="stateSelect" class="form-select form-select-sm" style="min-width:120px">
+    <option value="" selected>More Info ▼</option>
+    <option value="about">Know More (About Us)</option>
+    <option value="howto">How to Order</option>
+  </select>
+  <button id="menuBtn" class="btn btn-sm btn-outline-secondary"><i class="bi bi-list"></i></button>
   </div>
 
 </div>
@@ -965,6 +968,7 @@ document.getElementById("closePanelBtn").addEventListener("click", () => {
 </body>
 
 </html>
+
 
 
 
