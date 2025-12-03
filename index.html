@@ -186,6 +186,24 @@
     .share-slide-panel { width: 100%; right: -100%; }
     .share-options-grid { gap: 15px; }
     }
+
+    /* Close Button (top-right X) */
+.close-panel-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 36px;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 10;
+}
+.close-panel-btn:hover {
+    color: #FFD700;
+    transform: rotate(90deg) scale(1.1);
+      }
   </style>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -934,6 +952,7 @@ document.getElementById("shareEmail").onclick = () => {
 </body>
 
 </html>
+
 
 
 
