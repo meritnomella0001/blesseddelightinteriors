@@ -220,9 +220,70 @@
     </div>
   </div>
   <div class="top-controls">
-    <select id="stateSelect" class="form-select form-select-sm" style="min-width:120px">
-      <option value="">KNOW-MORE</option>
-    </select>
+<select id="infoSelect" class="form-select form-select-sm" style="min-width:150px; border-radius:12px; padding:8px 12px;">
+  <option value="" selected>More Info ▼</option>
+  <option value="about">Know More (About Us)</option>
+  <option value="howto">How to Order</option>
+</select>
+
+<!-- Re-use the same beautiful panels from before -->
+<!-- ABOUT PANEL -->
+<div id="aboutPanel" class="side-panel">
+  <div class="panel-header">
+    <h2>About Blessed Delight Interiors</h2>
+    <button class="close-btn">×</button>
+  </div>
+  <div class="panel-content">
+    <p class="elegant-text">
+      <strong>Blessed Delight Interior Furniture</strong> is a reputable and long-established furniture dealership 
+      located at the heart of <strong>Alaba International Market, Lagos</strong>.
+    </p>
+    <p class="elegant-text">
+      We specialize in high-quality home and office furniture, offering timeless designs that combine comfort, 
+      craftsmanship, and contemporary style.
+    </p>
+    <p class="elegant-text">
+      With reliable nationwide delivery partnerships (Innocent Logistics, Okeyson Transport, Edison Logistics, etc.), 
+      we proudly serve customers in <strong>all 36 states + FCT</strong>.
+    </p>
+
+    <div class="contact-card">
+      <h3>Contact Information</h3>
+      <p><span class="material-icons">phone</span> 0701 355 0569 (Call/WhatsApp)</p>
+      <p><span class="material-icons">location_on</span> Shop F1645A, Alaba International Market,<br>Ojo, Lagos State.</p>
+      <p><span class="material-icons">domain_verification</span> Fully CAC-Registered Business</p>
+    </div>
+
+    <div class="thank-you">
+      Thank you for trusting Blessed Delight — Your trusted partner in premium furniture.
+    </div>
+  </div>
+</div>
+
+<!-- HOW TO ORDER PANEL -->
+<div id="howToPanel" class="side-panel">
+  <div class="panel-header">
+    <h2>How to Place Your Order</h2>
+    <button class="close-btn">×</button>
+  </div>
+  <div class="panel-content">
+    <div class="steps">
+      <h3 class="text-center mb-4">Simple 4-Step Ordering Process</h3>
+
+      <div class="step"><div class="step-icon">1</div><div class="step-text"><strong>Select your item</strong><br>Tap the ❤️ icon on any product you love</div></div>
+      <div class="step"><div class="step-icon">2</div><div class="step-text"><strong>Make an offer</strong><br>Click the “Make an Offer” button</div></div>
+      <div class="step"><div class="step-icon">3</div><div class="step-text"><strong>Contact us instantly</strong><br>Use the WhatsApp or Call button</div></div>
+      <div class="step"><div class="step-icon">4</div><div class="step-text"><strong>Send details</strong><br>Forward the product link + your offered price</div></div>
+
+      <div class="final-note">
+        <p>We will confirm availability, finalize pricing, and arrange swift delivery to your location anywhere in Nigeria.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Overlays -->
+<div id="overlay" class="overlay"></div>
     <button id="menuBtn" class="btn btn-sm btn-outline-secondary"><i class="bi bi-list"></i></button>
   </div>
 </div>
@@ -959,6 +1020,7 @@ document.getElementById("closePanelBtn").addEventListener("click", () => {
 </body>
 
 </html>
+
 
 
 
