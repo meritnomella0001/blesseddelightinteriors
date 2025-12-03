@@ -261,6 +261,40 @@
   background: rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 9998;
 }
 .overlay.active { opacity: 1; visibility: visible; }
+
+    .cac-image-wrapper {
+  margin: 25px 0;
+  text-align: center;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(139,69,19,0.15);
+  background: white;
+  padding: 12px;
+}
+
+.cac-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid #D4AF37; /* elegant gold border */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.cac-image:hover {
+  transform: scale(1.02);
+}
+
+.image-caption {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #8B4513;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
   </style>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -1044,6 +1078,15 @@ document.getElementById("closePanelBtn").addEventListener("click", () => {
       <p><span class="material-icons">location_on</span> Shop F1645A, Alaba International Market, Ojo, Lagos</p>
       <p><span class="material-icons">domain_verification</span> Fully CAC-Registered Business</p>
     </div>
+    <!-- Add this line exactly after the CAC <p> line -->
+<div class="cac-image-wrapper">
+  <img src="https://i.imgur.com/8QzK5eL.png" 
+       alt="Blessed Delight Interiors - CAC Registration Certificate & Premium Furniture Showcase" 
+       class="cac-image">
+  <div class="image-caption">
+    Officially Registered • Trusted Nationwide • Premium Quality Guaranteed
+  </div>
+</div>
     <div class="thank-you" style="text-align:center; font-style:italic; color:#8B4513; margin-top:25px;">
       Thank you for choosing Blessed Delight — Your trusted furniture partner.
     </div>
@@ -1098,6 +1141,7 @@ document.querySelectorAll('.close-btn, #overlay').forEach(el => {
 </body>
 
 </html>
+
 
 
 
