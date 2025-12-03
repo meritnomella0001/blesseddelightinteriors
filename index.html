@@ -949,10 +949,17 @@ document.getElementById("shareEmail").onclick = () => {
     const body = `${shareMessage.replace(/\n/g, "%0A")}`;
     window.open(`mailto:?subject=${encodeURIComponent(subject)}&body=${body}`);
 };
+    // Close panel when X is clicked
+document.getElementById("closePanelBtn").addEventListener("click", () => {
+    panel.classList.remove("open");
+    overlay.classList.remove("active");
+    document.body.style.overflow = "auto";
+});
   </script>
 </body>
 
 </html>
+
 
 
 
