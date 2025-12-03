@@ -1022,9 +1022,83 @@ document.getElementById("closePanelBtn").addEventListener("click", () => {
     document.body.style.overflow = "auto";
 });
   </script>
+  <!-- About Panel -->
+<div id="aboutPanel" class="side-panel">
+  <div class="panel-header">
+    <h2>About Blessed Delight Interiors</h2>
+    <button class="close-btn">×</button>
+  </div>
+  <div class="panel-content">
+    <p class="elegant-text">
+      <strong>Blessed Delight Interior Furniture</strong> is a reputable and long-established furniture dealership located at the heart of <strong>Alaba International Market, Lagos</strong>.
+    </p>
+    <p class="elegant-text">
+      We specialize in premium home and office furniture, offering timeless designs that combine comfort, craftsmanship, and contemporary style.
+    </p>
+    <p class="elegant-text">
+      Through trusted logistics partners (Innocent Logistics, Okeyson Transport, Edison Logistics, etc.), we deliver to <strong>all 36 states + FCT</strong>.
+    </p>
+    <div class="contact-card">
+      <h3>Contact Information</h3>
+      <p><span class="material-icons">phone</span> 0701 355 0569 (Call/WhatsApp)</p>
+      <p><span class="material-icons">location_on</span> Shop F1645A, Alaba International Market, Ojo, Lagos</p>
+      <p><span class="material-icons">domain_verification</span> Fully CAC-Registered Business</p>
+    </div>
+    <div class="thank-you" style="text-align:center; font-style:italic; color:#8B4513; margin-top:25px;">
+      Thank you for choosing Blessed Delight — Your trusted furniture partner.
+    </div>
+  </div>
+</div>
+
+<!-- How to Order Panel -->
+<div id="howToPanel" class="side-panel">
+  <div class="panel-header">
+    <h2>How to Place Your Order</h2>
+    <button class="close-btn">×</button>
+  </div>
+  <div class="panel-content">
+    <div class="steps">
+      <h3 class="text-center mb-4">Simple 4-Step Ordering Process</h3>
+      <div class="step"><div class="step-icon">1</div><div class="step-text"><strong>Select your item</strong><br>Tap the ❤️ icon on any product</div></div>
+      <div class="step"><div class="step-icon">2</div><div class="step-text"><strong>Make an offer</strong><br>Click “Make an Offer” button</div></div>
+      <div class="step"><div class="step-icon">3</div><div class="step-text"><strong>Contact us</strong><br>Use WhatsApp or Call button</div></div>
+      <div class="step"><div class="step-icon">4</div><div class="step-text"><strong>Send details</strong><br>Forward product link + your price</div></div>
+      <div class="final-note">
+        We will confirm availability, finalize pricing, and arrange delivery anywhere in Nigeria.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay"></div>
+  <script>
+document.getElementById('stateSelect').addEventListener('change', function() {
+  const val = this.value;
+  this.value = ""; // reset dropdown
+
+  if (val === 'about') {
+    document.getElementById('aboutPanel').classList.add('open');
+    document.getElementById('overlay').classList.add('active');
+  }
+  if (val === 'howto') {
+    document.getElementById('howToPanel').classList.add('open');
+    document.getElementById('overlay').classList.add('active');
+  }
+});
+
+// Close everything when clicking X or overlay
+document.querySelectorAll('.close-btn, #overlay').forEach(el => {
+  el.addEventListener('click', () => {
+    document.querySelectorAll('.side-panel').forEach(p => p.classList.remove('open'));
+    document.getElementById('overlay').classList.remove('active');
+  });
+});
+  </script>
 </body>
 
 </html>
+
 
 
 
